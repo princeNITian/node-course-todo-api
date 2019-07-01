@@ -23,16 +23,16 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', { useNewUrlParser: true
     //     console.log(JSON.stringify(result.ops,undefined,2));
     // });
 
-    // db.collection('Users').insertOne({
-    //     name: 'Prince Raj',
-    //     age: 22,
-    //     location: 'NIT Sikkim'
-    // }, (err, result) => {
-    //     if (err) {
-    //         return console.log('Unable to insert todos', err);
-    //     }
-    //     console.log(JSON.stringify(result.ops[0]._id.getTimestamp(), undefined, 2));
-    // });
+    db.collection('Users').insertOne({
+        name: 'Prince Raj',
+        age: 22,
+        location: 'NIT Sikkim'
+    }, (err, result) => {
+        if (err) {
+            return console.log('Unable to insert todos', err);
+        }
+        console.log(JSON.stringify(result.ops[0]._id.getTimestamp(), undefined, 2));
+    });
 
 
     client.close();
